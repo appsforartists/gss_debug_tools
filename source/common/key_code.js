@@ -1,0 +1,4 @@
+const KeyCode = {
+	'LEFT_SQUARE_BRACKET':		219,
+	'RIGHT_SQUARE_BRACKET':		221
+}

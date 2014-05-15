@@ -1,0 +1,10 @@
+/*	Natural Scrolling for Google Chrome™
+ *  by Brenton Simpson
+ *  bsimpson@appsforartists.com
+ *	7/29/2011
+ */
+
+const KeyCode = {
+	'LEFT_SQUARE_BRACKET':		219,
+	'RIGHT_SQUARE_BRACKET':		221
+}

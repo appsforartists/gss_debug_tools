@@ -1,0 +1,19 @@
+/*	Natural Scrolling for Google Chrome™
+ *	by Brenton Simpson
+ *	bsimpson@appsforartists.com
+ *	7/29/2011
+ */
+
+function switchTabOnKeyDown(event) {
+	if (event.ctrlKey && event.shiftKey) {
+		switch (event.keyCode) {
+			case KeyCode.LEFT_SQUARE_BRACKET:
+				hostAPI.sendRequest({'action': "com.appsforartists.previousTab"});
+				break;
+				
+			case KeyCode.RIGHT_SQUARE_BRACKET:
+				hostAPI.sendRequest({'action': "com.appsforartists.nextTab"});
+				break;
+		}
+	}
+}

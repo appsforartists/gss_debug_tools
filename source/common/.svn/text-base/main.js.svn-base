@@ -1,0 +1,7 @@
+/*	Natural Scrolling for Google Chrome™
+ *  by Brenton Simpson
+ *  bsimpson@appsforartists.com
+ *	7/29/2011
+ */
+
+window.addEventListener('keydown', switchTabOnKeyDown);
