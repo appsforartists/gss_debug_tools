@@ -28,6 +28,7 @@
 	                        							"common/css_class_name.js",
 	                        							"common/key_code.js",
 	                        							"common/keystroke_manager.js",
+	                        							"common/visualizer.jsx",
 	                        							"common/main.js"
 	                        						]
 	                        	}
