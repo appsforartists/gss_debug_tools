@@ -1,10 +1,10 @@
-/** @jsx React.DOM */
-
 var VisualizerNode = React.createClass({
     render: function() {
                 var model = this.props.model;
-                var style = "position: absolute;";
-                var classNames = [];
+                var style = {
+                    'position':     'absolute'
+                };
+                var classNames = [CSSClassName.VISUALIZER_NODE];
 
                 const REQUIRED_KEYS = [
                     'width',
@@ -31,28 +31,34 @@ var VisualizerNode = React.createClass({
                             if (parseFloat(value).toString().length == value.length)
                                 value += "px";
 
-                            style += key + ': ' + value + ;
+                            style[key] = value;
                         }
                     }
                 );
 
-                return <li
-                           className = "{ classNames.join(' ') }"
-                           style     = "{ style }"
-                       ></li>
-            };
+                return React.DOM.li(
+                    {
+                        'className':    classNames.join(' '),
+                        'style':        style,
+                    },
+                        model.name
+                )
+            }
 });
 
 var Visualizer = React.createClass({
     render: function() {
                 var nodes = this.props.models.map(
                     function (model, i, models) {
-                        return <VisualizerNode model = { model } />
+                        return VisualizerNode({'model': model });
                     }
                 );
 
-                return <ul className = "{ CSSClassName.VISUALIZER }">
-                           { nodes }
-                       </ul>
-            };
+                return React.DOM.ul(
+                    {
+                        'className': CSSClassName.VISUALIZER,
+                    },
+                        nodes
+                );
+            }
 });

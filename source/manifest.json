@@ -1,14 +1,14 @@
 {
     "manifest_version":     2,
-	"name":					"GSS Debug Tools",
-	"version":				"0.0.0",
-	"description":			"Exactly what it says on the tin.",
-	"icons":                {
-	                        	"16":				"icons/16.png",
-	                        	"32":				"icons/32.png",
-	                        	"48":				"icons/48.png",
-	                        	"128":				"icons/128.png"
-	                        },
+    "name":                    "GSS Debug Tools",
+    "version":              "0.0.0",
+    "description":          "Exactly what it says on the tin.",
+    "icons":                {
+                                "16":               "icons/16.png",
+                                "32":               "icons/32.png",
+                                "48":               "icons/48.png",
+                                "128":              "icons/128.png"
+                            },
 
     "background":           {
                                 "scripts":      [
@@ -16,25 +16,31 @@
                                                 ]
                             },
 
-	"content_scripts":      [
-	                        	{
-	                        		"run_at":		"document_start",
-	                        		"all_frames":	true,
-	                        		"matches":		["http://*/*", "https://*/*", "file:///*/*"],
-	                        		"js":			[
-	                        							"lib/react.js",
-	                        							"lib/jsx_transformer.js",
-	                        							"chrome/host_api.js",
-	                        							"common/css_class_name.js",
-	                        							"common/key_code.js",
-	                        							"common/keystroke_manager.js",
-	                        							"common/visualizer.jsx",
-	                        							"common/main.js"
-	                        						]
-	                        	}
-	                        ],
+    "content_scripts":      [
+                                {
+                                    "run_at":       "document_end",
+                                    "all_frames":   true,
+                                    "matches":      [
+                                    					"http://*/*",
+                                    					"https://*/*",
+                                    					"file:///*/*"
+                                    				],
+                                    "css":          [
+                                                    ],
+                                    "js":           [
+                                                        "lib/react.js",
+                                                        "chrome/host_api.js",
+                                                        "common/css_class_name.js",
+                                                        "common/key_code.js",
+                                                        "common/keystroke_manager.js",
+                                                        "common/visualizer.js",
+                                                        "common/gss_visualizer.js",
+                                                        "common/main.js"
+                                                    ]
+                                }
+                            ],
 
-	"permissions":          [
-	                        	"contextMenus"
-	                        ]
+    "permissions":          [
+                                "contextMenus"
+                            ]
 }
