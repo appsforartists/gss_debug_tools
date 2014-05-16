@@ -1,12 +1,5 @@
-#visualizer_container,
-#visualizer_container * {
+* {
     box-sizing:         border-box
-}
-
-#visualizer_container {
-    position:           absolute;
-    left:               0px;
-    top:                0px;
 }
 
 ul.visualizer,

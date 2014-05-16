@@ -26,7 +26,7 @@
                                         				    "file:///*/*"
                                         				],
                                         "css":          [
-                                                            // visualizer.css loaded insides gss_visualizer.js's shadow root
+                                                            "common/visualizer_host_page.css"
                                                         ],
                                         "js":           [
                                                             "lib/react.js",
@@ -47,6 +47,6 @@
                                 ],
 
     "web_accessible_resources": [
-                                    "common/visualizer.css"
+                                    "common/visualizer_shadow_root.css"
                                 ]
 }

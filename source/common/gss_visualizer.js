@@ -63,7 +63,7 @@ var gssVisualizer = new (function GSSVisualizer() {
             'type': 'text/css'
         }).then(
             function (xhr) {
-                style.innerText = xhr.responseText;
+                style.innerHTML = xhr.responseText;
             }
         );
 
