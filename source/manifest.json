@@ -22,8 +22,12 @@
 	                        		"all_frames":	true,
 	                        		"matches":		["http://*/*", "https://*/*", "file:///*/*"],
 	                        		"js":			[
+	                        							"lib/react.js",
+	                        							"lib/jsx_transformer.js",
 	                        							"chrome/host_api.js",
+	                        							"common/css_class_name.js",
 	                        							"common/key_code.js",
+	                        							"common/keystroke_manager.js",
 	                        							"common/main.js"
 	                        						]
 	                        	}
