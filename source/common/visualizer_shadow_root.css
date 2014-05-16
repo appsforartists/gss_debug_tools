@@ -15,6 +15,8 @@ li.visualizer_node {
     background-color:   rgba(0, 38, 95, .33);
 }
 
+/*  Need to think of a better solution to this.  We want them to be pinned in
+ *  only one dimension.  position: fixed pins them in both.                  */
 .rows_visualizer {
     position:           fixed;
     left:               0px;
