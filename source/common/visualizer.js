@@ -40,6 +40,7 @@ var VisualizerNode = React.createClass({
                     {
                         'className':    classNames.join(' '),
                         'style':        style,
+                        'key':          model.name,     // Need to check with @d4tocchini that virtual names are globally-unique
                     },
                         model.name
                 )
