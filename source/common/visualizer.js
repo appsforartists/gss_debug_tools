@@ -57,9 +57,45 @@ var Visualizer = React.createClass({
 
                 return React.DOM.ul(
                     {
-                        'className': CSSClassName.VISUALIZER,
+                        'className':    [
+                                           CSSClassName.VISUALIZER,
+                                           this.props.key,
+                                        ].join(' ')
                     },
                         nodes
+                );
+            }
+});
+
+var VisualizerGroup = React.createClass({
+    render: function() {
+                var groupsOfModels = this.props.groupsOfModels;
+
+                var visualizers = Array.isArray(groupsOfModels)
+
+                    ? this.props.groupsOfModels.map(
+                          function (models, i, groupsOfModels) {
+                              return Visualizer({'models': models});
+                          }
+                      )
+
+                    : Object.keys(groupsOfModels).map(
+                          function (key, i, keys) {
+                              return Visualizer(
+                                {
+                                    'models':       groupsOfModels[key],
+                                    'key':          key,
+                                }
+                            );
+                          }
+                      );
+
+
+                return React.DOM.div(
+                    {
+                        'className': CSSClassName.VISUALIZER_GROUP,
+                    },
+                        visualizers
                 );
             }
 });

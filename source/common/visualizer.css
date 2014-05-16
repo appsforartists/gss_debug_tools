@@ -1,0 +1,43 @@
+#visualizer_container,
+#visualizer_container * {
+    box-sizing:         border-box
+}
+
+#visualizer_container {
+    position:           absolute;
+    left:               0px;
+    top:                0px;
+}
+
+ul.visualizer,
+li.visualizer_node {
+    list-style:         none;
+    margin:             0px;
+    padding:            0px;
+    pointer-events:     none;
+}
+
+.visualizer_node {
+    overflow:           hidden;
+    background-color:   rgba(0, 38, 95, .33);
+}
+
+.rows_visualizer {
+    position:           fixed;
+    left:               0px;
+}
+
+.rows_visualizer .visualizer_node {
+    left:                 0px;
+    width:              100vw;
+}
+
+.columns_visualizer {
+    position:           fixed;
+    top:                0px;
+}
+
+.columns_visualizer .visualizer_node {
+    top:                  0px;
+    height:             100vh;
+}

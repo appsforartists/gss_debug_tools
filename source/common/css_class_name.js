@@ -1,8 +1,15 @@
 const CSSClassName = {
-    'SHOW_VIRTUALS':        'show_gss_virtuals',
-    'VISUALIZER':           'gss_visualizer',
-    'MISSING_LEFT':         'gss_missing_left',
-    'MISSING_TOP':          'gss_missing_top',
-    'MISSING_WIDTH':        'gss_missing_width',
-    'MISSING_HEIGHT':       'gss_missing_height',
+    'VISUALIZER_GROUP':         'visualizer_group',
+
+    'VISUALIZER':               'visualizer',
+    'ROWS_VISUALIZER':          'rows_visualizer',
+    'COLUMNS_VISUALIZER':       'columns_visualizer',
+    'BIDIMENSIONAL_VISUALIZER': 'bidimensional_visualizer',
+
+    'VISUALIZER_NODE':          'visualizer_node',
+
+    'MISSING_LEFT':             'missing_left',
+    'MISSING_TOP':              'missing_top',
+    'MISSING_WIDTH':            'missing_width',
+    'MISSING_HEIGHT':           'missing_height',
 };
