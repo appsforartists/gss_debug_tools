@@ -10,6 +10,7 @@ var gssVisualizer = new (function GSSVisualizer() {
         'columns':       null,
         'bidimensional': null,
     };
+    var _modelsByClassName = {};
 
     Object.defineProperty(
         this,
@@ -59,7 +60,7 @@ var gssVisualizer = new (function GSSVisualizer() {
         var style = document.createElement('style');
 
         reqwest({
-            'url':  hostAPI.getURL('common/visualizer.css'),
+            'url':  hostAPI.getURL('common/visualizer_shadow_root.css'),
             'type': 'text/css'
         }).then(
             function (xhr) {
@@ -102,20 +103,19 @@ var gssVisualizer = new (function GSSVisualizer() {
 
             _models['unsorted'] = null;
 
-            modelsByClassName = {};
-            modelsByClassName[CSSClassName.ROWS_VISUALIZER]          = _models['rows'],
-            modelsByClassName[CSSClassName.COLUMNS_VISUALIZER]       = _models['columns'],
-            modelsByClassName[CSSClassName.BIDIMENSIONAL_VISUALIZER] = _models['bidimensional'],
-
-            React.renderComponent(
-                VisualizerGroup(
-                    {
-                        'groupsOfModels':   modelsByClassName,
-                    }
-                ),
-                _container
-            );
+            _modelsByClassName[CSSClassName.ROWS_VISUALIZER]          = _models['rows'];
+            _modelsByClassName[CSSClassName.COLUMNS_VISUALIZER]       = _models['columns'];
+            _modelsByClassName[CSSClassName.BIDIMENSIONAL_VISUALIZER] = _models['bidimensional'];
         }
+
+        React.renderComponent(
+            VisualizerGroup(
+                {
+                    'groupsOfModels':   _modelsByClassName,
+                }
+            ),
+            _container
+        );
     }
 
     __init__();
